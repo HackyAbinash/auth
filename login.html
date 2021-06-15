@@ -406,9 +406,9 @@ googleLogin.onclick=function(){
     forgotpwd.onclick=function (){
     
     var user = firebase.auth().currentUser;
-var newPassword = getASecureRandomPassword();
+var resetEmail = getASecureRandomPassword();
 
-user.updatePassword(newPassword).then(function() {
+user.updatePassword(resetEmail).then(function() {
   // Update successful.
 }).catch(function(error) {
   // An error happened.
