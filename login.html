@@ -140,7 +140,9 @@
             <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
             
             <button class="btn btn-success btn-block" type="button" id="loginbtn"><i class="fas fa-sign-in-alt"></i> Sign in</button>
-            <a href="#" id="forgot_pswd">Forgot password?</a>
+            <a href="#" id="forgoid="forgotpwd">Forgot password?</a>
+            <hr>
+tpwd">Forgot password?</a>
             <hr>
 
             <p style="text-align:center"> OR  </p>
@@ -400,6 +402,17 @@ googleLogin.onclick=function(){
   
        
 }
+    forgotpwd.onclick=function (){
+    
+    var user = firebase.auth().currentUser;
+var newPassword = getASecureRandomPassword();
+
+user.updatePassword(newPassword).then(function() {
+  // Update successful.
+}).catch(function(error) {
+  // An error happened.
+});
+        }
 
 </script>
 
